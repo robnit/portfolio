@@ -1,5 +1,8 @@
 @media only screen and (min-width:1024px){
     /* code for desktop version */
+    /* TODO: Make the menu hover sorcery work */
+
+    
     .icon-menu {
         display: none;
       }

@@ -9,3 +9,14 @@ function Project (title, url, summary, imageUrl) { // eslint-disable-line
     imageUrl = this.imageUrl;
 }
 
+Project.prototype.toHtml = function() {
+    var $newProject = $('section.template').clone();
+    $newProject.removeClass('template');
+
+    $newProject.find('.projectTitle').text(this.title);
+    $newProject.find('.projectUrl').attr('href', this.projectUrl);
+    $newProject.find('.projectImage').attr('src', this.imageUrl);
+    $newProject.find('.projectSummary').text(this.summary);
+
+    return $newProject;
+};
