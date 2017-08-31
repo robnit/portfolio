@@ -3,25 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <title>Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="">
+  <meta name="viewport" content="width = device-width, initial-scale=1">
+  <link rel="stylesheet" href="vendor/normalize.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/icons.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/module.css">  
 </head>
 <body>
 
-  <header>
+  <header class="site-head">
     <h1>Portfolio</h1>
-      <nav>
-        <ul>
-          <li><a href="#" >Button</a></li>
-          <li><a href="#" >Button</a></li>
-          <li><a href="#" >Button</a></li>
+      <nav id="main-menu">
+        <span class="icon-menu"></span>
+        <ul class="buttons">
+          <li class="tab" data-content=""><a href="#" class="icon-happy">Button</a></li>
+          <li class="tab" data-content=""><a href="#" class="icon-happy">Button</a></li>
+          <li><a href="#" target="_blank" class="icon-happy">Button</a></li>
+          <li><a href="#" target="_blank" class="icon-happy">Button</a></li>
         </ul>
       </nav>
   </header>
 
   <main>
-    <section>
-      <p>Placeholder ipsum dolor</p>
+    <section id="projects">
+      <section class="template">
+        <h3 class="projectTitle">Project Title!</h3>
+        <a class="projectUrl" href="" alt="Project Image"><img class="projectImage" src="http://lorempixel.com/output/animals-q-c-480-360-1.jpg"></img></a>
+        <p class="projectSummary">Project Description here</p>
+      </section>
     </section>
   </main>
 
@@ -29,6 +39,8 @@
     &copy; 2017
   </footer>
 
-<script type="text/javascript" src""></script>
+<script type="text/javascript" src="vendor/jquery-3.2.1.js"></script>
+<script src="js/projectData.js"></script>
+<script src="js/projects.js"></script>
 </body>
 </html>

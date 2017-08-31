@@ -1,0 +1,25 @@
+@media only screen and (min-width:1024px){
+    /* code for desktop version */
+    /* TODO: Make the menu hover sorcery work */
+
+    
+    .icon-menu {
+        display: none;
+      }
+    
+    .main-menu {
+    padding: 20px;
+    }
+
+    .main-menu ul {
+    display: block;
+    }
+
+    .main-menu ul li {
+    display: inline;
+    }
+
+    .site-head {
+        background-color: #F8A4EE !important;
+    }
+}
