@@ -18,3 +18,5 @@ var projects = [ // eslint-disable-line
         imageUrl: 'http://lorempixel.com/output/animals-q-c-480-360-1.jpg'
     }
 ];
+
+var testVariable = 'hi';
