@@ -8,7 +8,16 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/icons.css">
   <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/module.css">  
+  <link rel="stylesheet" href="css/module.css"> 
+
+  <script id="project-template" type="text/x-handlebars-template">
+    <section>
+      <h3 class="projectTitle">{{title}}</h3>
+      <a class="projectUrl" href="{{{url}}}" alt="Project Image"><img class="projectImage" src="{{{imageUrl}}}"></img></a>
+      <p class="projectSummary">{{summary}}</p>
+    </section>
+  </script>
+
 </head>
 <body>
 
@@ -17,21 +26,25 @@
       <nav id="main-menu">
         <span class="icon-menu"></span>
         <ul class="buttons">
-          <li class="tab" data-content=""><a href="#" class="icon-happy">Button</a></li>
-          <li class="tab" data-content=""><a href="#" class="icon-happy">Button</a></li>
+          <li class="tab" data-content=""><a href="#" class="icon-happy">Home</a></li>
+          <li class="tab" data-content=""><a href="#" class="icon-happy">About</a></li>
           <li><a href="#" target="_blank" class="icon-happy">Button</a></li>
           <li><a href="#" target="_blank" class="icon-happy">Button</a></li>
         </ul>
       </nav>
   </header>
 
+  <ul id="filters">
+    <li>
+      <select id="project-filter">
+        <option value="">Filter by Project</option>
+      </select>
+    </li>
+  </ul>
+
   <main>
     <section id="projects">
-      <section class="template">
-        <h3 class="projectTitle">Project Title!</h3>
-        <a class="projectUrl" href="" alt="Project Image"><img class="projectImage" src="http://lorempixel.com/output/animals-q-c-480-360-1.jpg"></img></a>
-        <p class="projectSummary">Project Description here</p>
-      </section>
+
     </section>
   </main>
 
@@ -40,6 +53,7 @@
   </footer>
 
 <script type="text/javascript" src="vendor/jquery-3.2.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script> 
 <script src="js/projectData.js"></script>
 <script src="js/projects.js"></script>
 </body>

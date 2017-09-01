@@ -1,6 +1,6 @@
 'use strict';
 
-var projects = [ // eslint-disable-line
+var projectObject = [ // eslint-disable-line
     {
         title: 'About Me',
         url: 'http://www.google.com',
@@ -18,5 +18,3 @@ var projects = [ // eslint-disable-line
         imageUrl: 'http://lorempixel.com/output/animals-q-c-480-360-1.jpg'
     }
 ];
-
-var testVariable = 'hi';
