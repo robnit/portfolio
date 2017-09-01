@@ -16,10 +16,20 @@
     }
 
     .main-menu ul li {
-    display: inline;
+        display: inline;
     }
 
     .site-head {
         background-color: #F8A4EE !important;
+    }
+
+    .buttons {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .buttons li {
+        padding: 20px;
     }
 }

@@ -2,31 +2,32 @@
 
 var allProjects = []; // eslint-disable-line
 
-function Project (title, url, summary, imageUrl) { // eslint-disable-line
-    title = this.title;
-    url = this.url;
-    summary = this.summary;
-    imageUrl = this.imageUrl;
+function Project (object) { // eslint-disable-line
+    this.title = object.title;
+    this.url = object.url;
+    this.summary = object.summary;
+    this.imageUrl = object.imageUrl;
 }
 
 Project.prototype.toHtml = function() {
     var $newProject = $('section.template').clone();
-    $newProject.removeClass('template');
-
-    $newProject.find('.projectTitle').text('this.title)');
+    $newProject.find('.projectTitle').text(this.title);
     $newProject.find('.projectUrl').attr('href', this.projectUrl);
     $newProject.find('.projectImage').attr('src', this.imageUrl);
     $newProject.find('.projectSummary').text(this.summary);
-
+    $newProject.removeClass('template');
     return $newProject;
 };
 
 //Populate allProjects array
-projects.forEach(function(x) { //eslint-disable-line
+projectObject.forEach(function(x) { //eslint-disable-line
+    // console.log(new Project(x));
     allProjects.push(new Project(x));
+    console.log(allProjects);
 });
 
 //Append AllProjects to html
-allProjects.forEach(function(x){
-    $('#projects').append(x.toHtml());
+allProjects.forEach(function(y) {
+    $('#projects').append(y.toHtml());
 });
+
