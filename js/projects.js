@@ -10,13 +10,18 @@ function Project (object) { // eslint-disable-line
 }
 
 Project.prototype.toHtml = function() {
-    var $newProject = $('section.template').clone();
-    $newProject.find('.projectTitle').text(this.title);
-    $newProject.find('.projectUrl').attr('href', this.projectUrl);
-    $newProject.find('.projectImage').attr('src', this.imageUrl);
-    $newProject.find('.projectSummary').text(this.summary);
-    $newProject.removeClass('template');
-    return $newProject;
+    // var $newProject = $('section.template').clone();
+    // $newProject.find('.projectTitle').text(this.title);
+    // $newProject.find('.projectUrl').attr('href', this.projectUrl);
+    // $newProject.find('.projectImage').attr('src', this.imageUrl);
+    // $newProject.find('.projectSummary').text(this.summary);
+    // $newProject.removeClass('template');
+
+    var template = $('#project-template').html();
+    var templateFiller = Handlebars.compile(template);
+    var filledTemplate = templateFiller(this);
+
+    return filledTemplate;
 };
 
 //Populate allProjects array
