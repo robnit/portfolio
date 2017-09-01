@@ -20,7 +20,7 @@ Project.prototype.toHtml = function() {
     var template = $('#project-template').html();
     var templateFiller = Handlebars.compile(template);
     var filledTemplate = templateFiller(this);
-
+    
     return filledTemplate;
 };
 
@@ -28,7 +28,7 @@ Project.prototype.toHtml = function() {
 projectObject.forEach(function(x) { //eslint-disable-line
     // console.log(new Project(x));
     allProjects.push(new Project(x));
-    console.log(allProjects);
+    // console.log(allProjects);
 });
 
 //Append AllProjects to html
