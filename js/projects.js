@@ -1,7 +1,5 @@
 'use strict';
 
-var allProjects = []; // eslint-disable-line
-
 function Project (object) { // eslint-disable-line
     this.title = object.title;
     this.url = object.url;
@@ -9,24 +7,39 @@ function Project (object) { // eslint-disable-line
     this.imageUrl = object.imageUrl;
 }
 
+Project.allProjects = [];
+
 Project.prototype.toHtml = function() {
-    
-    var template = $('#project-template').html();
-    var templateFiller = Handlebars.compile(template);
-    var filledTemplate = templateFiller(this);
-    
-    return filledTemplate;
+    let template = $('#project-template').html();
+    let templateFiller = Handlebars.compile(template);
+    return templateFiller(this);
 };
 
-//Populate allProjects array
-projectObject.forEach(function(x) { //eslint-disable-line
-    // console.log(new Project(x));
-    allProjects.push(new Project(x));
-    // console.log(allProjects);
-});
+Project.loadAll = function(projectObject){
+    //Populate allProjects array
+    projectObject.forEach(function(x) { //eslint-disable-line
+        Project.allProjects.push(new Project(x));
+    });
 
-//Append AllProjects to html
-allProjects.forEach(function(y) {
-    $('#projects').append(y.toHtml());
-});
+    //Append AllProjects to html
+    Project.allProjects.forEach(function(y) {
+        $('#projects').append(y.toHtml());
+    });
+}
 
+Project.fetchAll = function() {
+    if (localStorage.projectData) {
+        Project.loadAll( JSON.parse(localStorage.projectData) );
+    } else {
+        $.getJSON( 'data/projectData.json' )
+            .done( function(data){
+                console.log('success');
+                localStorage.setItem('projectData', JSON.stringify( data ));
+                Project.loadAll( data );
+            })
+    }
+}
+
+$(document).ready(function(){
+    Project.fetchAll();
+})
