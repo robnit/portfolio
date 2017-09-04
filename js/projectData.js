@@ -16,5 +16,9 @@ var projectObject = [ // eslint-disable-line
         url: 'http://www.google.com',
         summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         imageUrl: 'http://lorempixel.com/output/animals-q-c-480-360-1.jpg'
+    },{
+        title: 'dgdsgsg',
+        url: 'dfgdfgdf',
+        summary: 'fdfgdkjHKJFSHKKJFSNKFSKJjfsnfkj jk fdskjf dk dkjsnfkjsdnfks'
     }
 ];
