@@ -11,9 +11,9 @@ function Project (object) { // eslint-disable-line
 
 Project.prototype.toHtml = function() {
     
-    var template = $('#project-template').html();
-    var templateFiller = Handlebars.compile(template);
-    var filledTemplate = templateFiller(this);
+    let template = $('#project-template').html();
+    let templateFiller = Handlebars.compile(template);
+    let filledTemplate = templateFiller(this);
     
     return filledTemplate;
 };
