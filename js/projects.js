@@ -1,6 +1,5 @@
 'use strict';
 
-var allProjects = []; // eslint-disable-line
 
 function Project (object) { // eslint-disable-line
     this.title = object.title;
@@ -8,6 +7,8 @@ function Project (object) { // eslint-disable-line
     this.summary = object.summary;
     this.imageUrl = object.imageUrl;
 }
+
+Project.allProjects = [];
 
 Project.prototype.toHtml = function() {
     
@@ -21,12 +22,12 @@ Project.prototype.toHtml = function() {
 //Populate allProjects array
 projectObject.forEach(function(x) { //eslint-disable-line
     // console.log(new Project(x));
-    allProjects.push(new Project(x));
+    Project.allProjects.push(new Project(x));
     // console.log(allProjects);
 });
 
 //Append AllProjects to html
-allProjects.forEach(function(y) {
+Project.allProjects.forEach(function(y) {
     $('#projects').append(y.toHtml());
 });
 
