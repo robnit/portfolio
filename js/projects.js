@@ -29,10 +29,7 @@ Project.loadAll = function(projectObject){
 
 Project.fetchAll = function() {
     if (localStorage.projectData) {
-        // When projectData is already in localStorage,
-        // we can load it with the .loadAll function above,
-        // and then render the index page (using the proper method on the articleView object).
-        Project.loadAll( JSON.parse(localStorage.projectData) ); //DONE TODO: What do we pass in to loadAll()?
+        Project.loadAll( JSON.parse(localStorage.projectData) );
     } else {
         $.getJSON( 'data/projectData.json' )
             .done( function(data){
@@ -40,15 +37,9 @@ Project.fetchAll = function() {
                 localStorage.setItem('projectData', JSON.stringify( data ));
                 Project.loadAll( data );
             })
-        // DONE TODO: When we don't already have the rawData,
-        // we need to retrieve the JSON file from the server with AJAX (which jQuery method is best for this?),
-        // cache it in localStorage so we can skip the server call next time,
-        // then load all the data into Project.all with the .loadAll function above,
-        // and then render the index page.
     }
 }
+
 $(document).ready(function(){
     Project.fetchAll();
-
-
 })
