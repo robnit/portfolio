@@ -2,7 +2,7 @@
 
 const express = require( 'express' );
 const app = express ();
-const MYPORT = process.env.MYPORT || 3000;  //process.env returns object containing user environment
+const MYPORT = process.env.PORT || 3000;
 
 app.use( express.static('./public') );
 
@@ -13,3 +13,4 @@ app.get( '/', function( request,response ){
 app.listen(MYPORT, function() {
     console.log(`it's working! port is ${MYPORT}`)
 });
+
