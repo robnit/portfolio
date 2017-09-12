@@ -16,14 +16,14 @@ Project.prototype.toHtml = function() {
 };
 
 Project.loadAll = function(projectObject){
+    
     //Populate allProjects array
-    projectObject.forEach(function(x) { //eslint-disable-line
-        Project.allProjects.push(new Project(x));
+    Project.allProjects = projectObject.map(function(a){
+        return new Project(a);
     });
-
-    //Append AllProjects to html
-    Project.allProjects.forEach(function(y) {
-        $('#projects').append(y.toHtml());
+    // //Append AllProjects to html
+    Project.allProjects.map(function(a){
+        $('#projects').append(a.toHtml());
     });
 }
 
