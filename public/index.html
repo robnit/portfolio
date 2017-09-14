@@ -18,6 +18,12 @@
     </section>
   </script>
 
+  <script id="git-template" type="text/x-handlebars-template">
+    <li>
+      <p>Created: {{created_at}}</p>
+    </li>
+  </script>
+
 </head>
 <body>
 
@@ -57,10 +63,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.7.1/page.min.js"></script>
 <script src="js/projects.js"></script>
-<script src="js/script.js"></script>
+<script src="js/githubToken.js"></script>
 <script src="js/projectController.js"></script>
 <script src="js/aboutController.js"></script>
 <script src="js/routes.js"></script>
+<script src="js/repo.js"></script>
+<script src="js/repoView.js"></script>
 
 <script type="text/javascript">
   app.Project.fetchAll();
