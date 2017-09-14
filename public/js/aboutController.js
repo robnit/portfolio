@@ -8,6 +8,7 @@ var app = app || {};
     $('#projects').hide();
     $('#about').show();
     
+    app.repos.requestRepos(app.repoView.index);
 
   }
 
