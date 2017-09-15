@@ -1,5 +1,6 @@
 'use strict';
 var app = app || {};
+console.log('in repoView.js');
 (function(module) {
     const repoView = {};
 
