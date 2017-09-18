@@ -8,19 +8,21 @@ console.log('in repo.js');
 
     repos.requestRepos = function(callback) {
         console.log('in requestRepos');
-        $.ajax({
-            url: 'https://api.github.com/users/Robnit/repos',
-            method: 'GET',
-            header: {
-                'Authorization': `token ${TOKEN}`
-            }
-        }).then( data => {
-            console.log(data);
-            repos.all= data;
-            callback();
+        // $.ajax({
+        //     url: 'https://api.github.com/users/Robnit/repos',
+        //     method: 'GET',
+        //     header: {
+        //         'Authorization': `token ${TOKEN}`
+        //     }
+        // }).then( data => {
+        //     console.log(data);
+        //     repos.all= data;
+        //     callback();
 
-            console.log( 'Data:', data );
-        })
+        //     console.log( 'Data:', data );
+        // })
+
+        $.get('/github/user/repos')
 
     };
     
