@@ -1,7 +1,18 @@
+ /* #main-menu ul {
+    display: none;
+    padding: 0;
+    list-style: none;
+    clear: both;
+  }
+  
+  #main-menu:hover ul {
+    display: block;
+  } */
+
+
 @media only screen and (min-width:1024px){
     /* code for desktop version */
     /* TODO: Make the menu hover sorcery work */
-
     
     .icon-menu {
         display: none;
